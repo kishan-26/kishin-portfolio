@@ -117,7 +117,7 @@ export const projects: Project[] = [
       'CodeMirror 6'
     ],
     githubUrl: 'https://github.com/kishan-26/dsa-master',
-    liveUrl: 'https://dsa-master-mu.vercel.app/',
+    liveDemoUrl: 'https://dsa-master-mu.vercel.app/',
     stats: [
       { label: 'Application Routes', value: '42 Routes' },
       { label: 'Algorithm', value: 'SM-2 Engine' },
