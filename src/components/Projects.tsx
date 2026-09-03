@@ -21,9 +21,10 @@ export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
-  const filteredProjects = selectedCategory === 'All'
-    ? projects
-    : projects.filter(p => p.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === 'All'
+      ? projects
+      : projects.filter(p => p.category === selectedCategory);
 
   return (
     <section id="projects" className="py-24 relative">
@@ -73,7 +74,7 @@ export const Projects: React.FC = () => {
               {/* Card Top Header */}
               <div className="p-6 sm:p-8 space-y-6">
 
-                {/* Meta Row: Category Badge & Date */}
+                {/* Meta Row */}
                 <div className="flex items-center justify-between gap-2">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ff7edb]/15 text-[#ff7edb] border border-[#ff7edb]/35">
                     {project.category === 'Full-Stack Web' ? (
@@ -81,6 +82,7 @@ export const Projects: React.FC = () => {
                     ) : (
                       <Cpu className="w-3.5 h-3.5" />
                     )}
+
                     <span>{project.category}</span>
                   </span>
 
@@ -101,7 +103,7 @@ export const Projects: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Simulated Visual Architecture Element */}
+                {/* Project Visual */}
                 {project.id === 'dsa-tracker-tool' ? (
                   <div className="p-4 rounded-2xl bg-[#090214] border border-[#ff7edb]/25 space-y-3">
 
@@ -116,7 +118,7 @@ export const Projects: React.FC = () => {
                       </span>
                     </div>
 
-                    {/* Heatmap Grid Simulation */}
+                    {/* Heatmap Grid */}
                     <div className="grid grid-cols-12 gap-1.5 pt-1">
                       {Array.from({ length: 24 }).map((_, i) => (
                         <div
@@ -139,7 +141,9 @@ export const Projects: React.FC = () => {
                       <span>Hook: useDueQuestions()</span>
                     </div>
                   </div>
+
                 ) : (
+
                   <div className="p-4 rounded-2xl bg-[#090214] border border-[#ff7edb]/25 space-y-3">
 
                     <div className="flex items-center justify-between text-[11px] font-mono">
@@ -156,15 +160,25 @@ export const Projects: React.FC = () => {
                     {/* Waveform Simulation */}
                     <div className="h-10 rounded-xl bg-[#140526] border border-[#ff7edb]/15 flex items-center px-3 justify-between overflow-hidden">
                       <div className="w-full flex items-center justify-around h-6">
+
                         <span className="h-1.5 w-1.5 rounded-full bg-[#ff7edb] animate-ping"></span>
+
                         <span className="h-4 w-1 bg-[#ff7edb] rounded-full"></span>
+
                         <span className="h-6 w-1 bg-[#a73be2] rounded-full"></span>
+
                         <span className="h-2 w-1 bg-[#6d2d8f] rounded-full"></span>
+
                         <span className="h-5 w-1 bg-[#ff7edb] rounded-full"></span>
+
                         <span className="h-3 w-1 bg-[#a73be2] rounded-full"></span>
+
                         <span className="h-7 w-1 bg-[#ff7edb] rounded-full shadow-sm shadow-[#ff7edb]"></span>
+
                         <span className="h-2 w-1 bg-[#6d2d8f] rounded-full"></span>
+
                         <span className="h-4 w-1 bg-[#ff7edb] rounded-full"></span>
+
                       </div>
                     </div>
 
@@ -180,8 +194,9 @@ export const Projects: React.FC = () => {
                   {project.description}
                 </p>
 
-                {/* Problem Solved Callout */}
+                {/* Problem Solved */}
                 <div className="p-4 rounded-2xl bg-[#ff7edb]/5 dark:bg-[#180a2d] border border-[#ff7edb]/20 text-xs text-slate-700 dark:text-[#ffeaf9] space-y-1">
+
                   <span className="font-bold text-[#ff7edb] flex items-center gap-1.5">
                     <Zap className="w-3.5 h-3.5" />
                     <span>Problem Solved:</span>
@@ -190,35 +205,43 @@ export const Projects: React.FC = () => {
                   <p className="leading-relaxed dark:text-[#ffeaf9]/80">
                     {project.problemSolved}
                   </p>
+
                 </div>
 
-                {/* Key Architectural Highlights */}
+                {/* Key Highlights */}
                 <div className="space-y-2">
+
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#a73be2]">
                     Key Highlights & Contributions
                   </h4>
 
                   <ul className="space-y-2">
+
                     {project.highlights.slice(0, 3).map((item, idx) => (
                       <li
                         key={idx}
                         className="flex items-start gap-2.5 text-xs text-[#ffeaf9]/85"
                       >
                         <CheckCircle2 className="w-4 h-4 text-[#ff7edb] shrink-0 mt-0.5" />
+
                         <span>{item}</span>
                       </li>
                     ))}
+
                   </ul>
+
                 </div>
 
-                {/* Quick Stats Pills */}
+                {/* Quick Stats */}
                 {project.stats && (
                   <div className="grid grid-cols-2 gap-2 pt-1">
+
                     {project.stats.map((stat, i) => (
                       <div
                         key={i}
                         className="p-2.5 rounded-xl bg-[#ff7edb]/5 dark:bg-[#180a2d] border border-[#ff7edb]/10 text-center"
                       >
+
                         <div className="text-[10px] uppercase tracking-wider text-[#a73be2] font-semibold">
                           {stat.label}
                         </div>
@@ -226,17 +249,21 @@ export const Projects: React.FC = () => {
                         <div className="text-xs font-bold font-mono text-[#ff7edb]">
                           {stat.value}
                         </div>
+
                       </div>
                     ))}
+
                   </div>
                 )}
+
               </div>
 
-              {/* Card Footer: Tech Tags & Action Buttons */}
+              {/* Card Footer */}
               <div className="p-6 bg-[#0f041d] border-t border-[#ff7edb]/15 space-y-4">
 
-                {/* Tech Stack Pills */}
+                {/* Tech Stack */}
                 <div className="flex flex-wrap gap-1.5">
+
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -245,6 +272,7 @@ export const Projects: React.FC = () => {
                       {tech}
                     </span>
                   ))}
+
                 </div>
 
                 {/* Action Buttons */}
@@ -256,7 +284,9 @@ export const Projects: React.FC = () => {
                     className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-black bg-[#ff7edb] hover:bg-[#ffa1e4] shadow-md shadow-[#ff7edb]/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <Sparkles className="w-4 h-4 text-black" />
+
                     <span>Technical Deep-Dive</span>
+
                     <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
                   </button>
 
@@ -270,22 +300,26 @@ export const Projects: React.FC = () => {
                       title="Open GitHub Repository"
                     >
                       <GithubIcon className="w-4 h-4 text-[#ff7edb]" />
+
                       <span>Repo</span>
+
                       <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
                     </a>
                   )}
 
                   {/* Live Demo */}
-                  {project.liveUrl && (
+                  {project.liveDemoUrl && (
                     <a
-                      href={project.liveUrl}
+                      href={project.liveDemoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-black bg-[#a73be2] hover:bg-[#c26cff] transition-all hover:scale-[1.02]"
                       title="Open Live Project"
                     >
                       <Globe className="w-4 h-4" />
+
                       <span>Live Demo</span>
+
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   )}
@@ -304,6 +338,7 @@ export const Projects: React.FC = () => {
         project={activeModalProject}
         onClose={() => setActiveModalProject(null)}
       />
+
     </section>
   );
 };
