@@ -30,8 +30,8 @@ export const personalInfo: PersonalInfo = {
     'Self-motivated Learner'
   ],
   stats: {
-    cgpa: '6.5',
-    leetcodeProblems: '65+',
+    cgpa: '7.11',
+    leetcodeProblems: '80+',
     leetcodeStreak: '50 Days',
     projectsCount: '2 Core Projects'
   }
